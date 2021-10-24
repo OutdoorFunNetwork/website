@@ -1,0 +1,17 @@
+.content-header {
+  border-bottom: solid 4px $content-head-border-color;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.byline {
+  display: flex;
+  align-items: center;
+  margin-left: 1.7rem;
+  margin-bottom: 0.5rem;
+  
+  .avatar {
+    margin-right: 0.5rem;
+  }
+}

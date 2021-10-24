@@ -1,0 +1,19 @@
+.card {
+  background-color: $card-background;
+  box-shadow: $bs;
+  padding: 10px;
+  margin-bottom: 0.66rem;
+
+  h2 {
+    display: flex;
+    align-items: center;
+  }
+
+  footer {
+    align-items: center;
+  }
+
+  .avatar {
+    margin-left: 0.5rem;
+  }
+}

@@ -1,0 +1,17 @@
+.page-footer {
+  background: $page-footer-background;
+  color: $page-footer-color;
+  text-align: center;
+  padding: 10px;
+}
+
+.footer-nav {
+  font-size: 1.7rem;
+  line-height: 1;
+
+  a {
+    color: $page-footer-color;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+}
