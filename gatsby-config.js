@@ -39,6 +39,16 @@ module.exports = {
         name: `routes`,
         path: `${__dirname}/routes`,
       }
-    }
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+        `Roboto Slab\:700,900`,
+        `Nunito`,
+        ],
+        display: 'swap'
+      },
+    },
   ],
 };

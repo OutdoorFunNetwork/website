@@ -1,26 +1,23 @@
-$red: #e23e57;
-$black: #393939;
-$gray: #3a3a3a;
-$green: #17b978;
-$blue: #3d84a8;
-$yellow: #ffc93c;
-$orange: #f58634;
-$purple: #a685e2;
-$light-gray: #f7f7fa;
-$off-white: #fcfcfc;
+$green-1: #EEF8ED;
+$green-2: #A2D69A;
+$green-3: #54AD47;
+$green-4: #23481E;
+
+$blue-1: #E8F9FD;
+$blue-2: #7DDDF2;
+$blue-3: #16BADE;
+$blue-4: #094E5D;
+
+$gray-1: #F1F3F4;
+$gray-2: #C7CFD1;
+$gray-3: #455154;
+$gray-4: #171B1C;
 
 // Text colors
-$link-color: $blue;
-$page-footer-color: $black;
-$tag-color: $green;
+$body-color: $gray-4;
+$sub-heading-color: $blue-3;
+$page-footer-color: #fff;
+$link-color: $blue-3;
 
 // Background colors
-$page-header-background: $off-white;
-$page-footer-background: $off-white;
-$byline-background: $blue;
-$tag-background: rgba(23, 185, 120, 0.16);
-$card-background: $light-gray;
-
-// Border colors
-$avatar-border-color: $blue;
-$content-head-border-color: $blue;
+$page-footer-background: $blue-4;

@@ -9,12 +9,6 @@ const Layout = ({ pageTitle, children }) => {
     <>
       <Helmet>
         <link rel="icon" type="image/svg+xml" href="../images/favicon.svg" sizes="any" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&display=swap"
-          rel="stylesheet"
-        />
         <script src="https://kit.fontawesome.com/4c48ab6713.js" crossorigin="anonymous"></script>
         <title>{pageTitle} | Outdoor Fun Network</title>
       </Helmet>
@@ -34,12 +28,22 @@ const Layout = ({ pageTitle, children }) => {
         {children}
       </main>
       <footer className="page-footer">
-        <p id="copyright">&copy; 2021 Outdoor Fun Network</p>
+        <StaticImage
+          alt="Outdoor Fun Network"
+          src="../images/text-logo.svg" />
+        <p>
+          <strong>Outdoor Fun Network</strong> is a collective of outdoor enthusiasts who
+          would like to pass our love of outdoor adventures on to others. Here you will 
+          find bike rides, bikepacking, backpacking, hikes, runs, snowboarding, skiing 
+          and generally anything else outdoors. All are welcome to become part our 
+          Outdoor Fun Network!
+        </p>
         <nav class="footer-nav">
-          <a href="https://www.instagram.com/outdoorfunnetwork/"><i class="fab fa-instagram"></i><span class="accessible-text">Follow us on Instagram</span></a>
           <a href="https://www.strava.com/clubs/outdoor-fun-network"><i class="fab fa-strava"></i><span class="accessible-text">Join us on Strava</span></a>
+          <a href="https://www.instagram.com/outdoorfunnetwork/"><i class="fab fa-instagram"></i><span class="accessible-text">Follow us on Instagram</span></a>
           <a href="https://github.com/OutdoorFunNetwork"><i class="fab fa-github"></i><span class="accessible-text">Visit us on GitHub</span></a>
         </nav>
+        <p id="copyright">&copy; 2021 Outdoor Fun Network. For reasons, I guess?</p>
       </footer>
     </>
   );

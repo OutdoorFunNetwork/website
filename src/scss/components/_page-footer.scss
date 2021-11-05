@@ -2,7 +2,17 @@
   background: $page-footer-background;
   color: $page-footer-color;
   text-align: center;
-  padding: 10px;
+  padding: 1.25rem;
+
+  p {
+    line-height: 1.53;
+    margin: 1.25rem auto;
+    max-width: 960px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .footer-nav {
