@@ -4,11 +4,20 @@ import Layout from '../components/layout';
 import '../scss/style.scss';
 
 const BlogPage = ({ data }) => {
+  const allPosts = data.allMdx.nodes;
+  const blogPosts = [];
+
+  for (const post of allPosts) {
+    if (post.frontmatter.type === 'blog') {
+      blogPosts.push(post);
+    }
+  }
+
   return (
     <Layout pageTitle="OFN Blog">
       <h2>Blog Posts</h2>
       {
-        data.allMdx.nodes.map(node => (
+        blogPosts.map(node => (
           <article className="card" key={node.id}>
             <h3>
               <Link to={`/blog/${node.slug}`}>
@@ -38,6 +47,7 @@ export const query = graphql`
         date(formatString: "MM/D/YYYY")
         tags
         blurb
+        type
       }
       id
       slug
