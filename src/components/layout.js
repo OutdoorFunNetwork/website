@@ -8,7 +8,7 @@ const Layout = ({ pageTitle, children }) => {
   return (
     <>
       <Helmet>
-        <link rel="icon" type="image/svg+xml" href="../images/favicon.svg" sizes="any" />
+        <link rel="icon" type="image/svg+xml" href="https://res.cloudinary.com/outdoorfunnetwork/image/upload/v1636081670/favicon_zbgkuh.svg" sizes="any" />
         <script src="https://kit.fontawesome.com/4c48ab6713.js" crossorigin="anonymous"></script>
         <title>{pageTitle} | Outdoor Fun Network</title>
       </Helmet>
