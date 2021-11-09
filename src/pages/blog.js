@@ -5,13 +5,7 @@ import '../scss/style.scss';
 
 const BlogPage = ({ data }) => {
   const allPosts = data.allMdx.nodes;
-  const blogPosts = [];
-
-  for (const post of allPosts) {
-    if (post.frontmatter.type === 'blog') {
-      blogPosts.push(post);
-    }
-  }
+  const blogPosts = allPosts.filter(post => post.frontmatter.type === 'blog');
 
   return (
     <Layout pageTitle="OFN Blog">

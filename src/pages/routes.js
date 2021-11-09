@@ -5,13 +5,8 @@ import '../scss/style.scss';
 
 const RoutesPage = ({ data }) => {
   const allRoutes = data.allMdx.nodes;
-  const routes = [];
+  const routes = allRoutes.filter(route => route.frontmatter.type === 'route');
 
-  for (const route of allRoutes) {
-    if (route.frontmatter.type === 'route') {
-      routes.push(route);
-    }
-  }
   return (
     <Layout pageTitle="Route Library">
       <h2>Go on an adventure!</h2>
