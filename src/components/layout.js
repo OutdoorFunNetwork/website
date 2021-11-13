@@ -3,13 +3,15 @@ import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import { Helmet } from 'react-helmet'
 import '../scss/style.scss';
+import GitHubIcon from '../images/github.svg';
+import InstagramIcon from '../images/instagram.svg';
+import StravaIcon from '../images/strava.svg';
 
 const Layout = ({ pageTitle, children }) => {
   return (
     <>
       <Helmet>
         <link rel="icon" type="image/svg+xml" href="https://res.cloudinary.com/outdoorfunnetwork/image/upload/v1636081670/favicon_zbgkuh.svg" sizes="any" />
-        <script src="https://kit.fontawesome.com/4c48ab6713.js" crossorigin="anonymous"></script>
         <title>{pageTitle} | Outdoor Fun Network</title>
       </Helmet>
       <header className="flex row between page-header">
@@ -39,9 +41,9 @@ const Layout = ({ pageTitle, children }) => {
           Outdoor Fun Network!
         </p>
         <nav class="footer-nav">
-          <a href="https://www.strava.com/clubs/outdoor-fun-network"><i class="fab fa-strava"></i><span class="accessible-text">Join us on Strava</span></a>
-          <a href="https://www.instagram.com/outdoorfunnetwork/"><i class="fab fa-instagram"></i><span class="accessible-text">Follow us on Instagram</span></a>
-          <a href="https://github.com/OutdoorFunNetwork"><i class="fab fa-github"></i><span class="accessible-text">Visit us on GitHub</span></a>
+          <a href="https://www.strava.com/clubs/outdoor-fun-network"><StravaIcon /><span class="accessible-text">Join us on Strava</span></a>
+          <a href="https://www.instagram.com/outdoorfunnetwork/"><InstagramIcon /><span class="accessible-text">Follow us on Instagram</span></a>
+          <a href="https://github.com/OutdoorFunNetwork"><GitHubIcon /><span class="accessible-text">Visit us on GitHub</span></a>
         </nav>
         <p id="copyright">&copy; 2021 Outdoor Fun Network. For reasons, I guess?</p>
       </footer>
