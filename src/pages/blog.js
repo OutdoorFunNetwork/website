@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
 import '../scss/style.scss';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 const BlogPage = ({ data }) => {
   const allPosts = data.allMdx.nodes;
@@ -21,7 +22,10 @@ const BlogPage = ({ data }) => {
             <p>{node.frontmatter.blurb}</p>
             <footer className="flex reverse">
               <span>{node.frontmatter.date}</span>
-              <span>{node.frontmatter.author}</span>
+              <GatsbyImage
+                image={getImage(node.frontmatter.avatar)}
+                alt={node.frontmatter.author}
+                className="avatar" />
             </footer>
           </article>
         ))
@@ -36,7 +40,11 @@ export const query = graphql`
     nodes {
       frontmatter {
         title
-        authorAvatar
+        avatar {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
         author
         date(formatString: "MM/D/YYYY")
         tags

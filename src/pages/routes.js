@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import '../scss/style.scss';
 
 const RoutesPage = ({ data }) => {
@@ -19,8 +20,14 @@ const RoutesPage = ({ data }) => {
                   {node.frontmatter.title}
                 </Link>
               </h3>
-              <span>{node.frontmatter.date}</span>
             </header>
+            <footer className="flex reverse">
+              <span>{node.frontmatter.date}</span>
+              <GatsbyImage
+                image={getImage(node.frontmatter.avatar)}
+                alt={node.frontmatter.author}
+                className="avatar" />
+            </footer>
           </article>
         ))
       }
@@ -37,6 +44,12 @@ export const query = graphql`
         title
         date(formatString: "MMMM D, YYYY")
         type
+        author
+        avatar {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
       }
       excerpt
       slug

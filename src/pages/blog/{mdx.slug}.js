@@ -2,7 +2,6 @@ import * as React from 'react';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Layout from '../../components/layout';
-import AuthorAvatar from '../../components/AuthorAvatar';
 
 const BlogPost = ({ data }) => {
   return (
@@ -11,10 +10,7 @@ const BlogPost = ({ data }) => {
         <h2>{data.mdx.frontmatter.title}</h2>
         <span>{data.mdx.frontmatter.date}</span>
         <div>
-          <span>{data.mdx.frontmatter.author}</span>
-          <AuthorAvatar 
-            authorSrc={data.mdx.frontmatter.authorAvatar}
-            authorAlt={data.mdx.frontmatter.author} />
+          <span>Posted by: {data.mdx.frontmatter.author}</span>
         </div>
       </header>
       <MDXRenderer>
@@ -31,7 +27,11 @@ export const query = graphql`
         title
         date(formatString: "MMMM D, YYYY")
         author
-        authorAvatar
+        avatar {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
       }
       body
     }
