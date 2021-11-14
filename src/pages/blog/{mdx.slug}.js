@@ -10,7 +10,7 @@ const BlogPost = ({ data }) => {
         <h2>{data.mdx.frontmatter.title}</h2>
         <span>{data.mdx.frontmatter.date}</span>
         <div>
-          <span>{data.mdx.frontmatter.author}</span>
+          <span>Posted by: {data.mdx.frontmatter.author}</span>
         </div>
       </header>
       <MDXRenderer>
@@ -27,7 +27,11 @@ export const query = graphql`
         title
         date(formatString: "MMMM D, YYYY")
         author
-        authorAvatar
+        avatar {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
       }
       body
     }
