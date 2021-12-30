@@ -22,6 +22,16 @@
         <span class="accessible-text">Visit us on GitHub</span>
       </a>
     </nav>
-    <p id="copyright">&copy; 2021 Outdoor Fun Network. For reasons, I guess?</p>
+    <p id="copyright">&copy; {{ currentYear }} Outdoor Fun Network. For reasons, I guess?</p>
   </footer>
 </template>
+
+<script>
+export default {
+  computed: {
+    currentYear () {
+      return new Date().getFullYear()
+    }
+  }
+}
+</script>

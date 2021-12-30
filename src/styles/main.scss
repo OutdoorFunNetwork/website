@@ -11,7 +11,7 @@ body {
   letter-spacing: 0.1em;
 }
 
-main {
+.wrapper {
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
@@ -68,3 +68,4 @@ a {
 
 @import 'components/page-header';
 @import 'components/page-footer';
+@import 'components/hero';
