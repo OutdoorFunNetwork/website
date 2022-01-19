@@ -1,0 +1,21 @@
+.page-header {
+  padding: 1.25rem;
+  align-items: center;
+  font-family: $nav-font-family;
+
+  img {
+    width: 177px;
+    height: auto;
+  }
+
+  nav {
+    a {
+      color: $nav-link-color;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+  }
+}

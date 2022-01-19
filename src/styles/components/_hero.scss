@@ -1,0 +1,16 @@
+.hero {
+  overflow: hidden;
+
+  @media (min-width: 1024px) {
+    height: 580px;
+  }
+
+  img {
+    height: auto;
+    width: 100%;
+
+    @media (min-width: 1024px) {
+      margin-top: -40px;
+    }
+  }
+}
