@@ -21,6 +21,9 @@
 
 <script>
 export default {
-  name: 'Home'
+  name: 'Home',
+  mounted() {
+    document.title = 'Welcome to Outdoor Fun Network!';
+  }
 }
 </script>

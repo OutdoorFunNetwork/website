@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import BlogListing from '@/views/BlogListing.vue'
+import BlogPost from '@/views/BlogPost.vue'
 import NotFound from '@/views/NotFound.vue'
 
 Vue.use(VueRouter)
@@ -24,6 +25,12 @@ const routes = [
     path: '/blog',
     name: 'Blog',
     component: BlogListing
+  },
+  {
+    path: '/blog/:postYear/:postMonth/:postDay/:slug',
+    name: 'BlogPost',
+    component: BlogPost,
+    props: true
   },
   {
     path: '*',
