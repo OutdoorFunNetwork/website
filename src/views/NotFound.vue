@@ -5,3 +5,11 @@
     <router-link :to="{ name: 'Home' }">Head home</router-link>
   </main>
 </template>
+
+<script>
+export default {
+  mounted() {
+    document.title = 'Not Found | Outdoor Fun Network';
+  }
+}
+</script>

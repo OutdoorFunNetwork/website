@@ -21,9 +21,9 @@ export default {
   async mounted() {
     document.title = 'Blog | Outdoor Fun Network';
 
-    await axios.get(process.env.VUE_APP_API_URL + '/api/posts/')
+    await axios.get(process.env.VUE_APP_API_URL + '/posts/')
       .then(response => {
-        this.posts = response.data;
+        this.posts = response.data.posts;
       })
       .catch(error => {
         console.log(error);
