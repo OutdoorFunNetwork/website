@@ -14,22 +14,77 @@ Make sure you copy `.env.example` to `.env` and update the values!
 
 ### Setup
 
-Make sure you run `npm i` before getting started. Once all the dependencies are installed you'll have access to the following commands:
+```bash
+# install dependencies
+$ npm i
 
-#### `npm run serve`
+# serve with hot reload at localhost:3000
+$ npm run dev
 
-Runs the dev server and starts the app at `http://localhost:8080`
-_* Make sure you've already got FMS running!_
+# build for production and launch server
+$ npm run build
+$ npm run start
 
-#### `npm run test:unit`
+# generate static project
+$ npm run generate
+```
 
-We're using Jest and Vue Test Utils for our testing. Testing is optional at this stage, but we do recommend checking your work as you go!
+For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
 
-#### `npm run lint`
+## Special Directories
 
-Another optional linting step if you don't have your editor configured to lint your code during development.
+You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
+
+### `assets`
+
+The assets directory contains your uncompiled assets such as Stylus or Sass files, images, or fonts.
+
+More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/assets).
+
+### `components`
+
+The components directory contains your Vue.js components. Components make up the different parts of your page and can be reused and imported into your pages, layouts and even other components.
+
+More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/components).
+
+### `layouts`
+
+Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
+
+More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
+
+
+### `pages`
+
+This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
+
+More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/get-started/routing).
+
+### `plugins`
+
+The plugins directory contains JavaScript plugins that you want to run before instantiating the root Vue.js Application. This is the place to add Vue plugins and to inject functions or constants. Every time you need to use `Vue.use()`, you should create a file in `plugins/` and add its path to plugins in `nuxt.config.js`.
+
+More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins).
+
+### `static`
+
+This directory contains your static files. Each file inside this directory is mapped to `/`.
+
+Example: `/static/robots.txt` is mapped as `/robots.txt`.
+
+More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/static).
+
+### `store`
+
+This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
+
+More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
 
 ## More from Outdoor Fun Network
 
   - [Adventure Log GPX Library](https://github.com/OutdoorFunNetwork/GPX-Library)
   - [Trail Trash Recipes](https://github.com/OutdoorFunNetwork/Trail-Trash)
+
+## Acknowledgements
+
+  - [404 page image](https://www.pexels.com/photo/a-person-inflating-a-tire-on-a-bicycle-8926742/)
