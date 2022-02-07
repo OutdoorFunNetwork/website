@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import axios from 'axios';
 import BlogListItem from '@/components/BlogListItem.vue';
+import BlogService from '@/services/BlogService';
 
 export default {
   head: {
@@ -16,21 +16,18 @@ export default {
   components: {
     BlogListItem
   },
-  data() {
-    return {
-      posts: []
+  async asyncData({ error }) {
+    try {
+      const { data } = await BlogService.getPosts();
+      return {
+        posts: data.posts
+      }
+    } catch(e) {
+      error({
+        statusCode: 503,
+        message: 'Unable to fetch posts at this time. Please try again.'
+      });
     }
-  },
-  async mounted() {
-    document.title = 'Blog | Outdoor Fun Network';
-
-    await axios.get(process.env.baseUrl + '/posts/')
-      .then(response => {
-        this.posts = response.data.posts;
-      })
-      .catch(error => {
-        console.log(error);
-      })
   }
 }
 </script>

@@ -4,6 +4,7 @@
     <section class="byline flex">
       <div>
         <span>by: {{ post.author.display_name }}</span>
+        <span>{{ formattedDate }}</span>
       </div>
       <img :src="post.author.avatar" class="avatar" :alt="post.author.display_name">
     </section>
@@ -12,28 +13,37 @@
 </template>
 
 <script>
-import axios from 'axios';
+import BlogService from '@/services/BlogService';
 
 export default {
   name: 'blog-post',
-  data() {
+  head() {
     return {
-      post: {
-        title: Number,
-        body: String,
-        published_at: String,
-        author: Object
-      }
+      title: this.post.title
     }
   },
-  mounted() {
-    axios.get(`${process.env.baseUrl}/posts/${this.$route.params.post}`)
-      .then(response => {
-        this.post = response.data;
-      })
-      .catch(error => {
-        console.log(error);
-      })
+  async asyncData({ error, params }) {
+    try {
+      const { data } = await BlogService.getPost(params.post);
+      return {
+        post: data
+      }
+    } catch (e) {
+      error({
+        statusCode: 503,
+        message: 'Unable to fetch post at this time. Please try again.'
+      });
+    }
+  },
+  computed: {
+    formattedDate() {
+      const dateString = this.post.published_at.split('-');
+      const month = dateString[1];
+      const day = dateString[2].substr(0, 2)
+      const year = dateString[0];
+
+      return `${month}/${day}/${year}`;
+    },
   }
 }
 </script>
