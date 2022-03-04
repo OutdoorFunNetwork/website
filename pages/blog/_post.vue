@@ -8,7 +8,7 @@
       </div>
       <img :src="post.author.avatar" class="avatar" :alt="post.author.display_name">
     </section>
-    <p>{{ post.body }}</p>
+    <article v-html="$md.render(post.body)" />
   </main>
 </template>
 
@@ -43,7 +43,7 @@ export default {
       const year = dateString[0];
 
       return `${month}/${day}/${year}`;
-    },
+    }
   }
 }
 </script>

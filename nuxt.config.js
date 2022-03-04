@@ -53,8 +53,13 @@ export default {
         set: '@fortawesome/free-brands-svg-icons',
         icons: ['faStrava', 'faGithub', 'faInstagram']
       }]
-    }]
+    }],
+    '@nuxtjs/markdownit'
   ],
+
+  markdownit: {
+    runtime: true
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
