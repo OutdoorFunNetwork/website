@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <fragment>
     <PageHeader />
     <Nuxt />
     <PageFooter />
-  </div>
+  </fragment>
 </template>
 
 <script>

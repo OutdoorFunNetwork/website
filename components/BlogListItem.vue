@@ -3,43 +3,47 @@
     <header class="blog-header">
       <h2>
         <nuxt-link :to="postSlug">
-          {{ post.title }}
+          {{ post.fields.title }}
         </nuxt-link>
       </h2>
       <section class="byline flex">
         <div>
-          <span>by: {{ post.author.display_name }}</span>
+          <span>by: {{ post.fields.author.fields.name }}</span>
           <span>{{ formattedDate }}</span>
         </div>
-        <img :src="post.author.avatar" class="avatar" alt="">
+        <img :src="post.fields.author.fields.image.fields.file.url" class="avatar" alt="">
       </section>
     </header>
   </article>
 </template>
 
 <script>
+import dateFormat from '~/plugins/date-format';
+
 export default {
   props: {
     post: {
-      id: Number,
-      slug: String,
-      title: String,
-      published_at: String,
-      author: Object,
-      categories: Object
+      fields: {
+        title: String,
+        slug: String,
+        body: String,
+        publishDate: String,
+        author: {
+          fields: {
+            name: String,
+            shortBio: String,
+            imag: Object,
+          }
+        }
+      }
     }
   },
   computed: {
-    formattedDate() {
-      const dateString = this.$props.post.published_at.split('-');
-      const month = dateString[1];
-      const day = dateString[2].substr(0, 2)
-      const year = dateString[0];
-
-      return `${month}/${day}/${year}`;
-    },
     postSlug() {
-      return `blog/${this.$props.post.id}/`;
+      return `blog/${this.$props.post.fields.slug}/`;
+    },
+    formattedDate() {
+      return dateFormat(this.$props.post.fields.publishDate);
     }
   }
 }
