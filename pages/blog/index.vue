@@ -7,7 +7,10 @@
 
 <script>
 import BlogListItem from '@/components/BlogListItem.vue';
-import BlogService from '@/services/BlogService';
+// import BlogService from '@/services/BlogService';
+import createClient from '~/plugins/contentful';
+
+const client = createClient();
 
 export default {
   head: {
@@ -18,9 +21,14 @@ export default {
   },
   async asyncData({ error }) {
     try {
-      const { data } = await BlogService.getPosts();
+      // const { data } = await BlogService.getPosts();
+      const { items } = await client.getEntries({
+        content_type: 'blogPost',
+        order: '-sys.createdAt'
+      });
+
       return {
-        posts: data.posts
+        posts: items
       }
     } catch(e) {
       error({

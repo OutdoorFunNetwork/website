@@ -34,6 +34,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/plugins/vue-frag.js',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -76,7 +77,9 @@ export default {
   },
 
   env: {
-    baseUrl: process.env.VUE_APP_API_URL || 'http://localhost:3000/api'
+    baseUrl: process.env.VUE_APP_API_URL || 'http://localhost:3000/api',
+    CTF_SPACE_ID: process.env.CTF_SPACE_ID,
+    CTF_ACCESS_TOKEN: process.env.CTF_ACCESS_TOKEN,
   },
 
   loading: {
