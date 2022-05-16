@@ -15,7 +15,7 @@
     "@nuxtjs/markdownit": "^2.0.0",
     "contentful": "^9.1.24",
     "core-js": "^3.22.4",
-    "dompurify": "^2.3.6",
+    "dompurify": "^2.3.8",
     "linkify-it": "^3.0.3",
     "nuxt": "^2.15.8",
     "nuxt-fontawesome": "^0.4.0",
