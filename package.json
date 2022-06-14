@@ -13,7 +13,7 @@
     "@fortawesome/free-brands-svg-icons": "^6.1.1",
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/markdownit": "^2.0.0",
-    "contentful": "^9.1.28",
+    "contentful": "^9.1.32",
     "core-js": "^3.23.0",
     "dompurify": "^2.3.8",
     "linkify-it": "^3.0.3",
