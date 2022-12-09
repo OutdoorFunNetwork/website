@@ -16,7 +16,7 @@
     "contentful": "^9.2.4",
     "core-js": "^3.25.1",
     "dompurify": "^2.4.0",
-    "linkify-it": "^3.0.3",
+    "linkify-it": "^4.0.1",
     "nuxt": "^2.15.8",
     "nuxt-fontawesome": "^0.4.0",
     "vue": "^2.7.7",
